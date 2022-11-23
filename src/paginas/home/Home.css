@@ -1,0 +1,14 @@
+.titulo{
+text-align: center;
+color:blueviolet
+}
+
+.img{
+    height: 400px;
+    width: 400px;
+}
+
+.containe{
+    display: flex;
+    justify-content: center;
+}
