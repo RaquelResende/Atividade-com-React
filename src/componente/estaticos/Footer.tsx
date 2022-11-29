@@ -16,14 +16,14 @@ function Footer(){
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#16A085", height: "120px"   }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center" style={{background:"#16A085"}}>
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
-                        </Box>
+                            <Typography variant="h5" align="center" gutterBottom className="cursor">Siga-nos nas redes sociais </Typography>
+                        </Box>  
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                <FacebookIcon style={{ fontSize: 60, color: "white" }} />
+                                <FacebookIcon className="redes " />
                             </a>
                             <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                                <InstagramIcon style={{ fontSize: 60, color: "white" }} />
+                                <InstagramIcon className="redes"/>
                             </a>
                             <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
                                 <LinkedInIcon style={{ fontSize: 60, color: "white" }} />

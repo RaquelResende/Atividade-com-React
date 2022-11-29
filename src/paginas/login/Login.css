@@ -1,5 +1,5 @@
 .texto1{
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .imagem{
@@ -11,7 +11,10 @@
     background-size: cover;
     background-position: center;
 }
-.texto-decorator-none{
 
-     text-decoration: none;
+
+.text-decorator-none{
+    text-decoration: none;
 }
+
+
