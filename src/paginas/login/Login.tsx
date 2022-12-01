@@ -7,7 +7,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage'
 import { login } from '../../services/Service'
-import UserLogin from '../../services/UserLogin'
+import UserLogin from '../../modelo/UserLogin'
 import './Login.css'
 
 function Login() {

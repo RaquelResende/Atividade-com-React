@@ -3,6 +3,7 @@ import "./Home.css"
 import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
 import { url } from "inspector";
+import TabPostagem from "../../componente/postagens/tabPostagem/TabPostagem";
 
 function Home(){
     return (
@@ -10,8 +11,10 @@ function Home(){
   <Grid container direction="row" justifyContent="center" alignItems="center" style={ {backgroundImage:`url("https://img.freepik.com/vetores-gratis/tons-de-verde-degrade-de-fundo_23-2148364585.jpg?w=2000")`}}>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
-                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>expresse aqui os seus pensamentos e opiniões!</Typography>
+                        <Box >
+                        <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="font.t" >Seja bem vindo(a)!</Typography>
+                        </Box>
+                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "grey", fontWeight: "bold" }}>Faça conecções com artistas de todo o mundo</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
@@ -22,8 +25,14 @@ function Home(){
                 <Grid item xs={6} >
                     <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
                 </Grid>
-                <Grid xs={12} style={{ backgroundColor: "white" }}>
+                <Grid xs={12}  style={{ backgroundColor: "white" }}>
+                <TabPostagem/>
                 </Grid>
+            
+               
+
+               
+
             </Grid>
         </>
         

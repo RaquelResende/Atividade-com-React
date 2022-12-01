@@ -12,3 +12,9 @@ color:blueviolet
     display: flex;
     justify-content: center;
 }
+
+.font.t{
+    font-size: medium;
+    color: "white";
+    
+}
