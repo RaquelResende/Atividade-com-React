@@ -20,15 +20,18 @@ function App() {
     <>
 
     <Router>
+
+      <div>
    <Navbar/>
 
  <Routes>
+  
   <Route path= '/home' element={ <Home/>}/>
   <Route path = '/' element= {<Login/>}/>
   <Route path = '/login' element= {<Login/>}/>
   <Route path = '/cadastrar' element= {<CadastroUsuario/>}/>
   <Route path = '/temas' element= {<ListaTema/>}/>
-  <Route path = '/postagens' element= {<ListaPostagem/>}/>
+  <Route path = '/posts' element= {<ListaPostagem/>}/>
   <Route path = '/formularioTema' element= {<CadastroTema/>}/>
   <Route path = '/formularioTema/:id' element= {<CadastroTema/>}/>
   <Route path = '/formularioPostagem/' element= {<CadastroPost/>}/>
@@ -37,6 +40,8 @@ function App() {
   <Route path = '/deletarPostagem/:id' element= {<DeletarPostagem/>}/>
 
  </Routes>
+
+ </div>
   <Footer/>
 
     </Router>

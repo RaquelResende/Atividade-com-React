@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css"
 import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
 import { url } from "inspector";
 import TabPostagem from "../../componente/postagens/tabPostagem/TabPostagem";
+import useLocalStorage from "react-use-localstorage";
+import { useNavigate } from "react-router-dom";
+import ModalPostagem from "../../componente/postagens/modalPostagem/ModalPostagem";
 
 function Home(){
+    let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+    
+    useEffect(() => {
+      if (token == "") {
+          alert("Você precisa estar logado")
+          navigate("/login")
+  
+      }
+  }, [token])
+
+
+
     return (
         <>
   <Grid container direction="row" justifyContent="center" alignItems="center" style={ {backgroundImage:`url("https://img.freepik.com/vetores-gratis/tons-de-verde-degrade-de-fundo_23-2148364585.jpg?w=2000")`}}>
@@ -14,10 +30,11 @@ function Home(){
                         <Box >
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" className="font.t" >Seja bem vindo(a)!</Typography>
                         </Box>
-                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "grey", fontWeight: "bold" }}>Faça conecções com artistas de todo o mundo</Typography>
+                        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "grey", fontWeight: "bold" }}>Deixe um relato para nossa comunidade</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
+                        <ModalPostagem />
                         </Box>
                         <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
                     </Box>
