@@ -5,14 +5,19 @@ import { Grid3x3 } from '@mui/icons-material'
 import { Box } from '@mui/material'
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage'
+
 import { login } from '../../services/Service'
 import UserLogin from '../../modelo/UserLogin'
 import './Login.css'
+import { useDispatch } from 'react-redux'
+import { addToken } from '../../store/tokens/actions'
 
 function Login() {
 const navigate = useNavigate()
-const[token, setToken]= useLocalStorage('token')
+
+const dispacht = useDispatch() 
+ const [token, setToken ] = useState("")
+
 const [userLogin, setUserLogin] = useState  <UserLogin>({
 
 usuario: '',
@@ -29,6 +34,7 @@ function updateModel(e:ChangeEvent<HTMLInputElement>){
 }
 useEffect(()=>{
     if(token !=''){
+        dispacht(addToken(token)) 
         navigate('/home')
     }
 },[token])

@@ -4,22 +4,29 @@ import './Navbar.css'
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
-import { tokenToString } from "typescript";
-import useLocalStorage from "react-use-localstorage";
+import { useDispatch, useSelector } from "react-redux";
+import { addToken } from '../../../store/tokens/actions';
+import TokenState from "../../../store/tokens/tokenReducer";
 
 function Navbar() {
 
-    const [tokenToString, setToken]= useLocalStorage('token')
+   
     const navigate = useNavigate()
+    const token = useSelector<TokenState,TokenState["tokens"]>(
+        (state) =>  state.tokens
+    )
+const dispacht= useDispatch()
+
 
     function goLogaut(){
-        setToken("")
+        dispacht(addToken(''));
         navigate('/login')
     }
-    return (
-        <>
 
-            <AppBar position="static" style={{ backgroundColor: "#16A085"}}>
+    var navbarComponent 
+    if (token !== ""){
+        navbarComponent= 
+        <AppBar position="static" style={{ backgroundColor: "#16A085"}}>
                 <Toolbar variant="dense">
                     <Box className='cursor' >
                         <Typography variant="h5" color="inherit" >
@@ -70,12 +77,13 @@ function Navbar() {
 
                 </Toolbar>
             </AppBar>
-
-
-
-
-        </>
-
-    )
+    }
+return (
+    <>
+        {navbarComponent}
+    </>
+)
 }
-export default Navbar
+
+export default Navbar;
+
