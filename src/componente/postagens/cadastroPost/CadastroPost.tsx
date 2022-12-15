@@ -8,6 +8,7 @@ import Tema from '../../../modelo/Tema';
 import Postagem from '../../../modelo/Postagem';
 import { useSelector } from 'react-redux';
 import TokenState from '../../../store/tokens/tokenReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPost() {
     let navigate = useNavigate();
@@ -88,14 +89,34 @@ function CadastroPost() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+            toast.success('Atualizado com sucesso', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
+                
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+            toast.success('Postagem cadastrada com sucesso', {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
+                
         }
         back()
 

@@ -6,11 +6,14 @@ import { Box } from '@mui/material'
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+
 import { login } from '../../services/Service'
 import UserLogin from '../../modelo/UserLogin'
 import './Login.css'
-import { useDispatch } from 'react-redux'
+
 import { addToken } from '../../store/tokens/actions'
+import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
 
 function Login() {
 const navigate = useNavigate()
@@ -44,10 +47,30 @@ async function onSubmit(e:ChangeEvent<HTMLFormElement>){
 console.log(Object.values(userLogin))
  try{
     await login('/auth/logar',userLogin,setToken)
-    alert('Usuário Logado com Sucesso!')
+    toast.success('🦄 Usuario logado com sucesso!', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
 
 }catch(erro){
-    alert('Dados incorretos')
+  
+    toast.error('Dados inconsistêntes', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+
 }
 
 }
