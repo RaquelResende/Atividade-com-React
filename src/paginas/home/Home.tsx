@@ -54,11 +54,12 @@ function Home(){
                         </Box>
                         <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
                     </Box>
+
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
+                    <img src="https://www.take.net/blog/wp-content/uploads/2022/11/um_numero_de_whatsapp_para_varios_atendentes_img3-1024x420.png" alt="" width="680px" height="380x" />
                 </Grid>
-                <Grid xs={12}  style={{ backgroundColor: "white" }}>
+                <Grid xs={12}  style={{ backgroundImage: "https://www.take.net/blog/wp-content/uploads/2022/11/um_numero_de_whatsapp_para_varios_atendentes_img3-1024x420.png" }}>
                 <TabPostagem/>
                 </Grid>
             
